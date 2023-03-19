@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Launch } from '../../interfaces';
 
-import styles from '../../styles/Home.module.css';
+import styles from './launch.module.css';
 
 type LaunchProps = {
   launch: Launch;
@@ -12,30 +12,45 @@ function LaunchComponent(props: LaunchProps) {
 
   return (
     <div className={styles.card}>
-      <h2 className={styles.title}>{launch.name}</h2>
+      <div className={styles.titleContainer}>
+        <h2>{launch.name}</h2>
+        <div className={styles.logoWrapper}>
+          <img className={styles.logo} src={launch.imageSrc} />
+        </div>
+      </div>
       <div className={styles.detailsContainer}>
-        <img className={styles.logo} src={launch.imageSrc} />
         <div className={styles.detailsContent}>
-          <span className={styles.detailsItem}>
-            <p className={styles.tag}>Date</p>
-            <p>{new Date(launch.date).toLocaleDateString()}</p>
-          </span>
-          <span className={styles.detailsItem}>
-            <p className={styles.tag}>Core</p>
-            <p>{launch.core}</p>
-          </span>
-          <span className={styles.detailsItem}>
+          <div className={styles.detailsItem}>
             <p className={styles.tag}>Status</p>
             <p className={launch.status ? styles.successText : styles.errorText}>
-              {launch.status ? 'Successful launch' : 'Failure'}
+              <b>{launch.status ? 'Successful' : 'Failure'}</b>
             </p>
-          </span>
+          </div>
           {!launch.status && (
-            <span className={styles.detailsItem}>
+            <div className={styles.detailsItem}>
               <p className={styles.tag}>Reason</p>
               <p className={styles.failReason}>{launch.details}</p>
-            </span>
+            </div>
           )}
+          <div className={styles.detailsItem}>
+            <p className={styles.tag}>Date</p>
+            <p>{new Date(launch.date).toLocaleDateString()}</p>
+          </div>
+          <div className={styles.detailsItem}>
+            <p className={styles.tag}>Core</p>
+            <p>{launch.core}</p>
+          </div>
+
+          <div className={styles.detailsItem}>
+            <p className={styles.tag}>Payloads</p>
+            <div>
+              {launch.payloads.map((payload) => (
+                <p key={payload.id}>
+                  <b>{payload.name}</b> ({payload.id})
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

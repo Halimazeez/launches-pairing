@@ -9,7 +9,7 @@ export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export default function Home() {
   const { data, error, isLoading } = useSWR<Launch[]>('/api/launches', fetcher);
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <div>Failed to load spaceX launch data</div>;
   if (isLoading || !data) return null;
 
   return (
