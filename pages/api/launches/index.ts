@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import getLaunches from '../../../lib/getLaunches';
-import mapRequestToLaunch from '../../../lib/MapRequestToLaunch';
+import mapRequestToLaunch from '../../../lib/mapRequestToLaunch';
 
 import { Launch } from '../../../types/Launch';
 
