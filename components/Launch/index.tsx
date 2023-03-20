@@ -26,16 +26,19 @@ function LaunchComponent(props: LaunchProps) {
               <b>{launch.status ? 'Successful' : 'Failure'}</b>
             </p>
           </div>
+
           {!launch.status && (
             <div className={styles.detailsItem}>
               <p className={styles.tag}>Reason</p>
               <p className={styles.failReason}>{launch.details}</p>
             </div>
           )}
+
           <div className={styles.detailsItem}>
             <p className={styles.tag}>Date</p>
             <p>{new Date(launch.date).toLocaleDateString()}</p>
           </div>
+
           <div className={styles.detailsItem}>
             <p className={styles.tag}>Core</p>
             <p>{launch.core}</p>
@@ -46,7 +49,7 @@ function LaunchComponent(props: LaunchProps) {
             <div>
               {launch.payloads.map((payload) => (
                 <p key={payload.id}>
-                  <b>{payload.name}</b> ({payload.id})
+                  <b>{payload.type}</b> ({payload.id})
                 </p>
               ))}
             </div>

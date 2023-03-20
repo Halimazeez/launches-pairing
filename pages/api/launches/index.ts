@@ -24,7 +24,7 @@ export default async function handler(_req: NextApiRequest, res: NextApiResponse
         imageSrc: launch.links.patch.small,
         status: launch.success,
         details: launch.details,
-        payloads: launch.payloads.map((payload: any) => ({ id: payload.id, name: payload.name })),
+        payloads: launch.payloads.map((payload: any) => ({ id: payload.id, type: payload.type })),
       } as Launch)
   );
 

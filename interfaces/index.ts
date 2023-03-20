@@ -8,7 +8,7 @@ export type Launch = {
   details: string;
   payloads: {
     id: string;
-    name: string;
+    type: string;
   }[];
 };
 
