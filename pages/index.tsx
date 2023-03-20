@@ -1,6 +1,7 @@
 import useSWR from 'swr';
+
 import Launches from '../components/Launches';
-import { Launch } from '../interfaces';
+import { Launch } from '../types/Launch';
 
 import styles from '../styles/Home.module.css';
 

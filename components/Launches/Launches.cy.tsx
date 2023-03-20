@@ -1,7 +1,8 @@
 import React from 'react';
+import { mount } from 'cypress/react18';
+
 import Launches from './index';
 import { testLaunches } from './testData';
-import { mount } from 'cypress/react18';
 
 describe('<Launches />', () => {
   it('renders', () => {
@@ -12,6 +13,6 @@ describe('<Launches />', () => {
   it('should contain two children', () => {
     mount(<Launches launches={testLaunches} />);
 
-    cy.get('[data-test="launches-grid"]').children().should('have.length', 2);
+    cy.get('[data-cy="launches-grid"]').children().should('have.length', 2);
   });
 });

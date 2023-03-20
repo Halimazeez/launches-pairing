@@ -1,4 +1,4 @@
-import { Launch } from '../../interfaces';
+import { Launch } from '../../types/Launch';
 
 export const testLaunches: Launch[] = [
   {
