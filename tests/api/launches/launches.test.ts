@@ -26,7 +26,7 @@ describe('api/Launches ', () => {
 
     expect(data.length === testData.length);
 
-    // Launch type
+    // Launch type check
     expect(data[0]).toMatchObject({
       id: expect.any(String),
       name: expect.any(String),

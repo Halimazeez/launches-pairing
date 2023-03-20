@@ -21,13 +21,13 @@ function LaunchComponent(props: LaunchProps) {
         <div className={styles.detailsContent}>
           <div className={styles.detailsItem}>
             <p className={styles.tag}>Status</p>
-            <p className={launch.status ? styles.successText : styles.errorText}>
+            <p data-test="status-text" className={launch.status ? styles.successText : styles.errorText}>
               <b>{launch.status ? 'Successful' : 'Failure'}</b>
             </p>
           </div>
 
           {!launch.status && (
-            <div className={styles.detailsItem}>
+            <div className={styles.detailsItem} data-test="reason">
               <p className={styles.tag}>Reason</p>
               <p className={styles.failReason}>{launch.details}</p>
             </div>
