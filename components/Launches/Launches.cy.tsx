@@ -6,7 +6,6 @@ import { testLaunches } from './testData';
 
 describe('<Launches />', () => {
   it('renders', () => {
-    // see: https://on.cypress.io/mounting-react
     mount(<Launches launches={testLaunches} />);
   });
 
