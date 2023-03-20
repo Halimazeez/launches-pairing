@@ -1,20 +1,17 @@
+import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Launch } from '../../../interfaces';
 
-export default async function handler(_req: NextApiRequest, res: NextApiResponse<Launch[]>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Launch[]>) {
   // limit is auto set to 10 items on POST request
-  const launchesRes = await fetch('https://api.spacexdata.com/v4/launches/query', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      options: {
-        populate: ['payloads'],
-      },
-    }),
-  }).then((res) => res.json());
+  const launchesRes = await axios.post('https://api.spacexdata.com/v4/launches/query', {
+    options: {
+      populate: ['payloads'],
+    },
+  });
 
   // convert api json data to a frontend type for easability
-  const launchesTyped: Launch[] = launchesRes.docs.map(
+  const launchesTyped: Launch[] = launchesRes.data.docs.map(
     (launch: any) =>
       ({
         id: launch.id,

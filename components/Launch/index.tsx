@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Launch } from '../../interfaces';
 
 import styles from './launch.module.css';

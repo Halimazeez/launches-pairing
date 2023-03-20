@@ -1,6 +1,6 @@
 export const testData = [
   {
-    id: 'rocketa123',
+    id: 'falconsat123',
     name: 'FalconSat',
     date_utc: '2006-03-24T22:30:00.000Z',
     cores: [
@@ -23,7 +23,7 @@ export const testData = [
     ],
   },
   {
-    id: 'rocketb123',
+    id: 'demosat123',
     name: 'DemoSat',
     date_utc: '2007-03-21T01:10:00.000Z',
     cores: [
@@ -47,12 +47,12 @@ export const testData = [
     ],
   },
   {
-    id: 'rocketb123',
-    name: 'DemoSat',
-    date_utc: '2007-03-21T01:10:00.000Z',
+    id: 'cots123',
+    name: 'COTS 1',
+    date_utc: '2010-12-08T15:43:00.000Z',
     cores: [
       {
-        core: '5e9e289ef35918416a3b2624',
+        core: '5e9e289ef35918187c3b2629',
       },
     ],
     links: {
@@ -60,13 +60,16 @@ export const testData = [
         small: 'https://images2.imgbox.com/f9/4a/ZboXReNb_o.png',
       },
     },
-    success: false,
-    details:
-      'Successful first stage burn and transition to second stage, maximum altitude 289 km, Premature engine shutdown at T+7 min 30 s, Failed to reach orbit, Failed to recover first stage',
+    success: true,
+    details: 'Launch was scrubbed on first attempt, second launch attempt was successful',
     payloads: [
       {
+        type: 'Dragon 1.0',
+        id: '5eb0e4b9b6c3bb0006eeb1e8',
+      },
+      {
         type: 'Satellite',
-        id: '5eb0e4b6b6c3bb0006eeb1e2',
+        id: '5eb0e4b9b6c3bb0006eeb1e9',
       },
     ],
   },

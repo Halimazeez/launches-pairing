@@ -5,7 +5,7 @@ export type Launch = {
   core: string;
   imageSrc: string;
   status: boolean;
-  details: string;
+  details: string | null;
   payloads: {
     id: string;
     type: string;
